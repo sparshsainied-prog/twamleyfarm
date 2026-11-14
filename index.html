@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Twamley Farm | The Stable, Farm Pod and Shearers Hut, Buckland, Tasmania</title>
+<meta name="description" content="Stay in an 1840s sandstone stable, a farm pod or the old shearers hut on the Turvey family's sheep farm in Buckland, East Coast Tasmania. A website idea made by Lamplit Studio for Twamley Farm.">
+<meta property="og:title" content="Twamley Farm, Buckland">
+<meta property="og:description" content="A website idea made by Lamplit Studio for Twamley Farm. Not their official site.">
+<meta property="og:image" content="https://sparshsainied-prog.github.io/twamleyfarm/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://sparshsainied-prog.github.io/twamleyfarm/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231e1f1c'/%3E%3Cpath d='M4 20 16 9l12 11' fill='none' stroke='%23efeeea' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M8 20v6h16v-6' fill='none' stroke='%23b08a5c' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preload" as="image" href="img/hero-2000.jpg" media="(min-width: 700px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-phone.jpg" media="(max-width: 699px)" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+/* Colours come from the farm: the Farm Pod's black cladding, the limewashed walls inside
+   The Stable, the ship's-hull baltic pine inside the Shearers Hut, the Stable's sandstone,
+   and the duck-egg blue of the hut door. Barlow Condensed for signwriting on farm iron,
+   Spectral for reading 150 years of family story. */
+:root{
+  --pod:#1e1f1c;
+  --pod-2:#2b2c28;
+  --lime:#efeeea;
+  --lime-2:#e2e0d9;
+  --pine:#8c4f2b;
+  --pine-2:#74401f;
+  --stone:#b08a5c;
+  --door:#9db7c4;
+  --ink-soft:#4a4a44;
+  --display:"Barlow Condensed","Arial Narrow","Helvetica Neue",sans-serif;
+  --text:"Spectral",Georgia,serif;
+  --gut:max(20px, env(safe-area-inset-left, 0px));
+  --gut-r:max(20px, env(safe-area-inset-right, 0px));
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--lime);color:var(--pod);font-family:var(--text);font-size:18px;line-height:1.6}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pine);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.02;margin:0;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+.skip{position:absolute;left:-9999px;top:0}
+.skip:focus{left:12px;top:12px;z-index:60;background:var(--lime);padding:8px 12px}
+
+.strip{background:var(--pod);color:var(--lime);font-family:var(--display);font-weight:500;font-size:15px;letter-spacing:.02em;text-align:center;
+  padding:8px var(--gut-r) 8px var(--gut);padding-top:calc(8px + env(safe-area-inset-top,0px))}
+
+/* Header over the hero */
+.top{position:absolute;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:18px var(--gut-r) 0 var(--gut)}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--lime)}
+.mark svg{width:40px;height:30px;flex:none}
+.mark .w{display:grid;line-height:1}
+.mark .a{font-family:var(--display);font-weight:700;font-size:25px;letter-spacing:.32em;margin-right:-.32em}
+.mark .b{font-family:var(--display);font-weight:500;font-size:13px;letter-spacing:.2em;margin-top:4px;opacity:.85}
+.top nav{display:flex;gap:22px;align-items:center;font-family:var(--display);font-weight:500;font-size:18px}
+.top nav a{color:var(--lime);text-decoration:none}
+.top nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:2px;
+  font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:.03em;text-decoration:none;border:0;cursor:pointer;
+  background:var(--pine);color:#fff}
+.btn:hover{background:var(--pine-2)}
+.btn.ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
+.btn.ghost:hover{background:rgba(255,255,255,.08)}
+.top .btn{white-space:nowrap}
+@media (max-width:820px){.top nav a:not(.btn){display:none}}
+@media (max-width:380px){.mark .a{font-size:21px;letter-spacing:.24em;margin-right:-.24em}.mark svg{width:32px}.top .btn{padding:0 14px;font-size:17px}}
+
+/* ---------- Hero: the morning mist burns off the paddock ---------- */
+.mistscene{position:relative;height:230vh}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#cfd3d0}
+.plane{position:absolute;inset:0;will-change:transform,opacity}
+.plane img{width:100%;height:100%;object-fit:cover}
+.p-land img{object-position:62% 60%}
+.p-fog img{object-position:50% 70%}
+.p-veil{z-index:4;pointer-events:none;background:linear-gradient(180deg,rgba(30,31,28,.62) 0%,rgba(30,31,28,0) 26%),linear-gradient(0deg,rgba(30,31,28,.66) 0%,rgba(30,31,28,.34) 42%,rgba(30,31,28,0) 66%)}
+.drift{position:absolute;left:-20%;width:140%;height:70%;bottom:-6%;will-change:transform,opacity;pointer-events:none}
+.drift img{width:100%;height:100%;object-fit:fill}
+.words{position:absolute;z-index:6;left:var(--gut);right:var(--gut-r);bottom:calc(15vh + env(safe-area-inset-bottom,0px));color:#fff;max-width:760px;will-change:transform,opacity}
+.words h1{font-size:clamp(52px,8.4vw,112px);font-weight:700;letter-spacing:.005em;text-shadow:0 2px 24px rgba(20,20,18,.35)}
+.words p{font-size:clamp(18px,1.6vw,21px);margin-top:16px;max-width:560px;text-shadow:0 1px 12px rgba(20,20,18,.6)}
+.words .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.words .btn.ghost{color:#fff}
+.credit{position:absolute;right:var(--gut-r);bottom:14px;z-index:6;color:rgba(255,255,255,.8);font-size:13px;font-style:italic}
+@media (max-width:699px){
+  .words{bottom:calc(120px + env(safe-area-inset-bottom,0px))}
+  .p-land img{object-position:60% 55%}
+  .drift{height:55%;left:-60%;width:220%}
+  .credit{display:none}
+}
+
+/* ---------- Plain sections ---------- */
+.wrap{padding:0 var(--gut-r) 0 var(--gut);max-width:1240px;margin:0 auto}
+section{position:relative}
+.lede{padding:96px 0 72px}
+.lede .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:end}
+.lede h2{font-size:clamp(38px,5vw,64px)}
+.lede p{font-size:20px;color:var(--ink-soft)}
+.lede p + p{margin-top:14px}
+@media (max-width:860px){.lede{padding:64px 0 48px}.lede .wrap{grid-template-columns:1fr;gap:20px}}
+
+/* ---------- Signature: their own map walks you to your door ---------- */
+.mapwalk{position:relative;height:520vh;background:#7f9467}
+.mstage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#8ea374}
+.mapbox{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
+.mapbox img{width:100%;height:100%;display:block}
+.pin{position:absolute;width:3.2%;aspect-ratio:1;margin:-1.6% 0 0 -1.6%;border-radius:50%;border:3px solid var(--door);
+  box-shadow:0 0 0 3px rgba(30,31,28,.55);opacity:0;transition:opacity .3s}
+.pin.on{opacity:1}
+.mtitle{position:absolute;left:var(--gut);top:calc(24px + env(safe-area-inset-top,0px));z-index:3;background:var(--pod);color:var(--lime);
+  padding:14px 18px 16px;max-width:420px;will-change:opacity,transform}
+.mtitle h2{font-size:clamp(30px,3.4vw,44px)}
+.mtitle p{font-size:16px;margin-top:6px;color:#cfccc3}
+.stops{position:absolute;right:var(--gut-r);top:50%;transform:translateY(-50%);width:min(420px,38vw);z-index:3}
+.stop{position:absolute;left:0;right:0;top:0;transform:translateY(-50%);background:var(--lime);color:var(--pod);opacity:0;will-change:opacity,transform;
+  box-shadow:0 18px 40px -18px rgba(20,20,18,.55)}
+.stop img{width:100%;aspect-ratio:3/2;object-fit:cover;height:auto}
+.stop .t{padding:16px 20px 20px}
+.stop .n{font-family:var(--display);font-weight:500;font-size:16px;letter-spacing:.08em;color:var(--pine)}
+.stop h3{font-size:34px;margin-top:2px}
+.stop p{font-size:17px;margin-top:6px;color:var(--ink-soft)}
+.stop a{display:inline-block;margin-top:10px;font-family:var(--display);font-weight:600;font-size:18px;color:var(--pine)}
+@media (max-width:860px){
+  .stops{left:var(--gut);right:var(--gut-r);width:auto;top:auto;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:none}
+  .stop{top:auto;bottom:0;transform:none;display:grid;grid-template-columns:120px 1fr}
+  .stop img{height:100%;aspect-ratio:auto}
+  .stop .t{padding:12px 14px 14px}
+  .stop h3{font-size:26px}
+  .stop p{font-size:15px;line-height:1.45}
+  .stop a{font-size:16px;margin-top:6px}
+  .mtitle{right:var(--gut-r);max-width:none}
+}
+
+/* ---------- The three stays ---------- */
+.stay{padding:104px 0 0}
+.stay .head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:32px}
+.stay .k{font-family:var(--display);font-weight:500;font-size:18px;letter-spacing:.06em;color:var(--pine)}
+.stay h2{font-size:clamp(46px,6.4vw,88px);margin-top:4px}
+.stay .head p{font-size:19px;color:var(--ink-soft)}
+.stay .facts{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-wrap:wrap;gap:8px 22px;font-family:var(--display);font-weight:500;font-size:19px}
+.stay .facts li{border-top:2px solid var(--stone);padding-top:4px}
+.gal{display:grid;gap:12px}
+.gal img{width:100%;height:100%;object-fit:cover}
+.gal figure{margin:0;overflow:hidden;background:var(--lime-2)}
+.g-stable{grid-template-columns:2fr 1fr 1fr;grid-template-rows:330px 330px}
+.g-stable .big{grid-row:span 2}
+.g-stable .wide{grid-column:span 2}
+.g-pod{grid-template-columns:1fr 1.5fr;grid-template-rows:300px 300px}
+.g-pod .big{grid-row:span 2;grid-column:2}
+.g-pod figure:first-child{grid-row:1;grid-column:1}
+.g-hut{grid-template-columns:1fr 1fr 1fr;grid-template-rows:600px}
+.g-hut .big{grid-column:span 2}
+.book1{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-top:24px}
+.book1 .small{font-size:16px;color:var(--ink-soft)}
+.quote{margin:40px 0 0;max-width:760px;font-size:clamp(22px,2.4vw,30px);line-height:1.35;font-style:italic}
+.quote cite{display:block;margin-top:10px;font-style:normal;font-family:var(--display);font-size:17px;font-weight:500;color:var(--ink-soft);letter-spacing:.03em}
+@media (max-width:860px){
+  .stay{padding-top:72px}
+  .stay .head{grid-template-columns:1fr;gap:12px}
+  .g-stable,.g-pod,.g-hut{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gal .big{grid-column:1 / -1;grid-row:auto;aspect-ratio:4/3}
+  .gal figure{aspect-ratio:1}
+  .gal .wide{grid-column:1 / -1;aspect-ratio:3/2}
+  .g-pod figure:first-child{grid-row:auto;grid-column:auto}
+  .g-hut .tall{aspect-ratio:2/3}
+}
+
+/* ---------- Dark band: the farm ---------- */
+.farm{background:var(--pod);color:var(--lime);margin-top:110px;padding:96px 0 104px}
+.farm .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.farm h2{font-size:clamp(40px,5vw,68px)}
+.farm p{color:#d2cfc6;margin-top:16px;font-size:19px}
+.farm .list{list-style:none;padding:0;margin:28px 0 0;border-top:1px solid #45463f}
+.farm .list li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #45463f;font-family:var(--display);font-size:21px;font-weight:500}
+.farm .list span{color:var(--door);white-space:nowrap}
+.farm .ph{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.farm .ph figure{margin:0}
+.farm .ph .w{grid-column:1 / -1}
+.farm figcaption{font-size:14px;color:#a9a69c;margin-top:6px;font-style:italic}
+@media (max-width:860px){.farm{padding:64px 0 72px;margin-top:72px}.farm .grid{grid-template-columns:1fr;gap:36px}}
+
+/* ---------- Guests ---------- */
+.guests{padding:96px 0}
+.guests h2{font-size:clamp(38px,4.6vw,60px);max-width:14ch}
+.qs{display:grid;grid-template-columns:repeat(12,1fr);gap:40px 32px;margin-top:40px}
+.qs blockquote{margin:0;font-size:21px;line-height:1.45}
+.qs blockquote:nth-child(1){grid-column:1 / span 7;font-size:28px}
+.qs blockquote:nth-child(2){grid-column:9 / span 4}
+.qs blockquote:nth-child(3){grid-column:2 / span 5}
+.qs blockquote:nth-child(4){grid-column:8 / span 5;font-size:26px}
+.qs cite{display:block;margin-top:8px;font-style:normal;font-family:var(--display);font-weight:500;font-size:17px;color:var(--ink-soft);letter-spacing:.03em}
+.qs .src{margin-top:40px;font-size:15px;color:var(--ink-soft);grid-column:1 / -1}
+@media (max-width:860px){.guests{padding:64px 0}.qs{display:block}.qs blockquote{margin-top:28px;font-size:20px!important}}
+
+/* ---------- Getting there ---------- */
+.there{display:grid;grid-template-columns:1.2fr 1fr;min-height:560px;background:var(--lime-2)}
+.there figure{margin:0;position:relative;overflow:hidden}
+.there figure img{width:100%;height:100%;object-fit:cover}
+.there .t{padding:72px var(--gut-r) 72px 56px;align-self:center}
+.there h2{font-size:clamp(36px,4.2vw,56px)}
+.there p{margin-top:14px;color:var(--ink-soft)}
+.there dl{margin:24px 0 0;display:grid;grid-template-columns:auto 1fr;gap:8px 20px;font-size:18px}
+.there dt{font-family:var(--display);font-weight:600;font-size:19px}
+.there dd{margin:0}
+@media (max-width:860px){.there{grid-template-columns:1fr}.there figure{aspect-ratio:3/2}.there .t{padding:48px var(--gut-r) 56px var(--gut)}}
+
+/* ---------- Book ---------- */
+.book{background:var(--pine);color:#fff;padding:88px 0 96px}
+.book h2{font-size:clamp(40px,5vw,68px)}
+.book .sub{margin-top:12px;font-size:19px;max-width:620px;color:#f3e6dc}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.three a{display:block;text-decoration:none;color:var(--pod);background:var(--lime)}
+.three a img{aspect-ratio:3/2;object-fit:cover;width:100%;height:auto}
+.three .t{padding:14px 18px 18px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.three h3{font-size:30px}
+.three .go{font-family:var(--display);font-weight:600;font-size:18px;color:var(--pine);white-space:nowrap}
+.three a:hover .go{text-decoration:underline;text-underline-offset:4px}
+.direct{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;font-size:18px}
+.direct a{color:#fff;font-weight:600}
+.book .btn{background:var(--pod)}
+.book .btn:hover{background:#000}
+@media (max-width:860px){.three{grid-template-columns:1fr}.three a{display:grid;grid-template-columns:132px 1fr}.three a img{height:100%;aspect-ratio:auto}.three h3{font-size:26px}.three .t{flex-direction:column;gap:2px}.book{padding:64px 0 72px}}
+
+.book :focus-visible{outline-color:#fff}
+@media (max-height:560px){
+  .words{bottom:20px}
+  .words h1{font-size:40px}
+  .words p{display:none}
+  .stop img{display:none}
+  .stop .t{padding:10px 14px 12px}
+  .stop p{display:none}
+  .mtitle p{display:none}
+}
+footer{background:var(--pod);color:#bdb9ae;padding:36px 0 calc(110px + env(safe-area-inset-bottom,0px));font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+@media (min-width:861px){footer{padding-bottom:36px}}
+
+/* Thumb bar on phones */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:none;gap:10px;padding:10px var(--gut-r) calc(10px + env(safe-area-inset-bottom,0px)) var(--gut);
+  background:var(--pod);box-shadow:0 -6px 20px rgba(0,0,0,.18)}
+.bar .btn{flex:1;min-height:52px}
+.bar .btn.ghost{color:var(--lime);flex:0 0 34%}
+@media (max-width:860px){.bar{display:flex}}
+
+@media (prefers-reduced-motion: reduce){
+  .mistscene{height:auto}
+  .mistscene .stage{position:relative;height:92vh;height:92svh}
+  .p-fog,.drift{display:none}
+  .mapwalk{height:auto}
+  .mstage{position:relative;height:auto;overflow:visible;background:var(--pod);padding:0 0 40px}
+  .mapbox{position:relative;transform:none!important;width:100%!important;height:auto!important;max-width:760px;margin:0 auto}
+  .mapbox img{height:auto}
+  .pin{opacity:1}
+  .mtitle{position:relative;left:auto;right:auto;top:auto;max-width:none;padding:40px var(--gut-r) 24px var(--gut)}
+  .stops{position:relative;inset:auto;transform:none;width:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:24px var(--gut-r) 0 var(--gut)}
+  .stop{position:relative;inset:auto;transform:none!important;opacity:1!important;display:block}
+  .stop img{aspect-ratio:3/2;height:auto}
+  @media (max-width:860px){.stops{grid-template-columns:1fr}}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the stays</a>
+<div class="strip">A website idea made by Lamplit Studio for Twamley Farm. Not their official site.</div>
+
+<header class="top">
+  <a class="mark" href="#top" aria-label="Twamley Farm, back to top">
+    <svg viewBox="0 0 40 30" aria-hidden="true"><path d="M2 17 20 3l18 14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M8 13v14h24V13" fill="none" stroke="#b08a5c" stroke-width="2.2"/><path d="M16 27v-7h8v7" fill="none" stroke="#b08a5c" stroke-width="2"/></svg>
+    <span class="w"><span class="a">TWAMLEY</span><span class="b">FARM, BUCKLAND</span></span>
+  </a>
+  <nav aria-label="Page">
+    <a href="#stable">The Stable</a>
+    <a href="#pod">Farm Pod</a>
+    <a href="#hut">Shearers Hut</a>
+    <a class="btn" href="#book">Check dates</a>
+  </nav>
+</header>
+
+<main id="main">
+<section class="mistscene" id="top" aria-label="Twamley Farm">
+  <div class="stage">
+    <div class="plane p-land" data-p="land">
+      <picture>
+        <source media="(max-width:699px)" srcset="img/hero-phone.jpg">
+        <img src="img/hero-2000.jpg" alt="A timber hut in long golden grass on Twamley Farm, bush hills behind and storm clouds breaking over the valley" width="2000" height="1155" fetchpriority="high">
+      </picture>
+    </div>
+    <div class="plane p-fog" data-p="fog" aria-hidden="true"><img src="img/mist.jpg" alt="" width="1024" height="639"></div>
+    <div class="drift" data-p="d1" aria-hidden="true"><img src="img/mist-a.png" alt="" width="1400" height="800"></div>
+    <div class="words" data-p="words">
+      <h1>Slow down, retreat, nourish.</h1>
+      <p>Three places to stay on the Turvey family's sheep farm in Buckland: an 1840s sandstone stable, a little black farm pod, and the old shearers hut at the end of the valley.</p>
+      <div class="acts">
+        <a class="btn" href="#book">Check dates</a>
+        <a class="btn ghost" href="#map">Find your door</a>
+      </div>
+    </div>
+    <div class="drift" data-p="d2" aria-hidden="true" style="height:48%;bottom:-10%"><img src="img/mist-b.png" alt="" width="1400" height="800"></div>
+    <div class="plane p-veil" aria-hidden="true"></div>
+    <p class="credit">Twamley Farm, Buckland, East Coast Tasmania</p>
+  </div>
+</section>
+
+<section class="lede">
+  <div class="wrap">
+    <h2>The Turveys have farmed Twamley since 1874.</h2>
+    <div>
+      <p>In 1823 John West Turvey was sent to Van Diemen's Land for stealing a sheep in Kent. In 1874 his son Frank came to Twamley Farm, and the family has farmed it ever since.</p>
+      <p>Today Angela, Elizabeth and Alistair look after it. Alistair runs the farm. Angela and Elizabeth look after you.</p>
+    </div>
+  </div>
+</section>
+
+<section class="mapwalk" id="map" aria-label="The farm map, with the three stays">
+  <div class="mstage">
+    <div class="mapbox" id="mapbox">
+      <img src="img/map.jpg" alt="Twamley Farm's own painted map: the clay target range, Tea Tree Rivulet, the airstrip, Charlie's Hill, the trout dam, the old huts and, in the corner, the homestead with the Stable, Farm Pod and Shearers Hut" width="1753" height="2480">
+      <span class="pin" data-pin="0" style="left:26.5%;top:82.3%"></span>
+      <span class="pin" data-pin="1" style="left:21.1%;top:83.3%"></span>
+      <span class="pin" data-pin="2" style="left:29.1%;top:87.8%"></span>
+    </div>
+    <div class="mtitle" data-m="title">
+      <h2>Find your door</h2>
+      <p>This is the farm's own map. The three stays sit together by the homestead, in the corner.</p>
+    </div>
+    <div class="stops">
+      <article class="stop" data-stop="0">
+        <img src="img/stable-out-800.jpg" alt="The Stable, a two storey sandstone building with red creeper on the walls, under a big oak" width="800" height="533" loading="lazy">
+        <div class="t">
+          <div class="n">By the homestead</div>
+          <h3>The Stable</h3>
+          <p>Sandstone and blue gum beams, built around 1847 for four horses.</p>
+          <a href="#stable">See inside</a>
+        </div>
+      </article>
+      <article class="stop" data-stop="1">
+        <img src="img/pod-out-800.jpg" alt="The Farm Pod, a small black timber cabin behind a post and rail fence and a brick garden wall" width="800" height="600" loading="lazy">
+        <div class="t">
+          <div class="n">In the homestead grounds</div>
+          <h3>Farm Pod</h3>
+          <p>Its own garden, a fire pot and a cedar hot tub.</p>
+          <a href="#pod">See inside</a>
+        </div>
+      </article>
+      <article class="stop" data-stop="2">
+        <img src="img/hut-out-800.jpg" alt="The Shearers Hut, weathered timber walls and a blue door, two chairs on the deck" width="800" height="533" loading="lazy">
+        <div class="t">
+          <div class="n">At the end of the valley</div>
+          <h3>Shearers Hut</h3>
+          <p>Where the shearers slept in the days of hand shears.</p>
+          <a href="#hut">See inside</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="stay" id="stable" aria-labelledby="h-stable">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="k">Sleeps 2</div>
+        <h2 id="h-stable">The Stable</h2>
+      </div>
+      <div>
+        <p>Built around 1847 from rough local sandstone and blue gum beams, it once held four horse stalls, with grain and timber stored upstairs. Now the queen bed and ensuite are up under the beams, and the kitchen and wood fire are downstairs. It sits under century old English oaks, looking out over the hills.</p>
+        <ul class="facts">
+          <li>Wood fired cedar hot tub</li>
+          <li>Breakfast provisions</li>
+          <li>Wood fire</li>
+          <li>Terrace with firepot and BBQ</li>
+        </ul>
+      </div>
+    </div>
+    <div class="gal g-stable">
+      <figure class="big"><img src="img/stable-out.jpg" alt="The Stable from the lawn, lamplight in the windows, red creeper over the sandstone" width="1600" height="1066" loading="lazy"></figure>
+      <figure><img src="img/stable-loft.jpg" alt="The bedroom upstairs, white bed under the rough timber roof beams and a skylight" width="1200" height="800" loading="lazy"></figure>
+      <figure><img src="img/stable-bath.jpg" alt="A white claw foot bath against the stone wall in the ensuite" width="1200" height="800" loading="lazy"></figure>
+      <figure class="wide"><img src="img/stable-lounge.jpg" alt="Downstairs, a lounge by the wood heater between whitewashed walls and old timber posts" width="1200" height="800" loading="lazy"></figure>
+    </div>
+    <div class="book1">
+      <a class="btn" href="https://www.airbnb.com.au/rooms/9032049">Check dates for The Stable</a>
+      <span class="small">705 reviews on Airbnb, rated 4.97</span>
+    </div>
+    <blockquote class="quote">"the lit fires both inside the Stable and outside (wood fired hot tub) waiting for us after our day at Maria Island"<cite>Jenny, August 2026, Airbnb review</cite></blockquote>
+  </div>
+</section>
+
+<section class="stay" id="pod" aria-labelledby="h-pod">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="k">Sleeps 2</div>
+        <h2 id="h-pod">Farm Pod</h2>
+      </div>
+      <div>
+        <p>A small black cabin in the homestead grounds with its own garden, one of the farm's fire pots and a private cedar hot tub. Inside it's modern with a hint of the 1960s: a double bedroom with ensuite, a full kitchen, and a lounge that opens onto the front deck for the morning sun.</p>
+        <ul class="facts">
+          <li>Wood fired cedar hot tub</li>
+          <li>Own garden and fire pot</li>
+          <li>Front deck</li>
+          <li>For couples or one</li>
+        </ul>
+      </div>
+    </div>
+    <div class="gal g-pod">
+      <figure><img src="img/pod-deck.jpg" alt="Two black string chairs on the Farm Pod's deck, paddocks and bush hills beyond" width="640" height="480" loading="lazy"></figure>
+      <figure class="big"><img src="img/pod-bed.jpg" alt="The Farm Pod bedroom, black and white quilt, a wide window onto green paddocks" width="1200" height="900" loading="lazy"></figure>
+      <figure><img src="img/pod-lounge.jpg" alt="The Farm Pod lounge, a dark sofa with a cowhide cushion and a round mirror" width="1200" height="900" loading="lazy"></figure>
+    </div>
+    <div class="book1">
+      <a class="btn" href="https://www.airbnb.com.au/rooms/15556557">Check dates for the Farm Pod</a>
+      <span class="small">537 reviews on Airbnb, rated 4.97</span>
+    </div>
+    <blockquote class="quote">"you can see sheep from the bedroom window!"<cite>Emma, April 2026, Airbnb review</cite></blockquote>
+  </div>
+</section>
+
+<section class="stay" id="hut" aria-labelledby="h-hut">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="k">Sleeps 2</div>
+        <h2 id="h-hut">Shearers Hut</h2>
+      </div>
+      <div>
+        <p>The Turveys built it for the shearers in the early 1900s, when sheep were still shorn with blades. The shearers kept their tallies on the walls. It's lined with baltic pine from the hulls of wheat ships, boards known as dullage. It sits at the end of the valley, with a wood fire inside and an outdoor bath facing the hills.</p>
+        <ul class="facts">
+          <li>Outdoor bath</li>
+          <li>Wood fire</li>
+          <li>Breakfast provisions</li>
+          <li>Forest views</li>
+        </ul>
+      </div>
+    </div>
+    <div class="gal g-hut">
+      <figure class="big"><img src="img/hut-bath.jpg" alt="A zinc outdoor bath on the hut's deck under silver birch, looking out to the hill" width="1600" height="1066" loading="lazy"></figure>
+      <figure class="tall"><img src="img/hut-inside.jpg" alt="Inside the hut, red-brown pine walls and ceiling, a chandelier, the bed and a lounge" width="900" height="1351" loading="lazy"></figure>
+    </div>
+    <div class="book1">
+      <a class="btn" href="https://www.airbnb.com.au/rooms/591441972059777255">Check dates for the Shearers Hut</a>
+      <span class="small">222 reviews on Airbnb, rated 4.92</span>
+    </div>
+    <blockquote class="quote">"We arrived at night, and the wood heater was already lit."<cite>Nathali, July 2026, Airbnb review</cite></blockquote>
+  </div>
+</section>
+
+<section class="farm" aria-labelledby="h-farm">
+  <div class="wrap grid">
+    <div>
+      <h2 id="h-farm">Out on the farm</h2>
+      <p>Grab a mountain bike, a walking pack or a picnic and head out on the bush trails. Distances are from the farm's own map.</p>
+      <ul class="list">
+        <li>Charlie's Hill lookout <span>700 m</span></li>
+        <li>Tea Tree Hut <span>2 km</span></li>
+        <li>Sam's Hut <span>2.7 km</span></li>
+        <li>Top Garden Hill <span>4.5 km</span></li>
+        <li>Prosser Sugarloaf <span>8 km</span></li>
+      </ul>
+      <p>From January 2027, Alistair takes small groups out birding: more than 50 species have been recorded on the farm, including at least seven of Tasmania's twelve endemics.</p>
+    </div>
+    <div class="ph">
+      <figure class="w"><img src="img/paddock.jpg" alt="Three people walking across a wide paddock towards the camera, blue hills on the horizon" width="1600" height="1067" loading="lazy"></figure>
+      <figure><img src="img/picnic.jpg" alt="A bush picnic on a wooden board: billy, enamel cups, bread and cheese" width="1400" height="933" loading="lazy"></figure>
+      <figure><img src="img/mist.jpg" alt="Morning mist through the gums above a frosty paddock" width="1024" height="639" loading="lazy"><figcaption>Mist over the paddocks</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="guests" aria-labelledby="h-guests">
+  <div class="wrap">
+    <h2 id="h-guests">What guests write after a night here</h2>
+    <div class="qs">
+      <blockquote>"Sitting on the deck at night looking at the stars and hearing wildlife was one of the highlights of our trip."<cite>Georgie, Shearers Hut, March 2026</cite></blockquote>
+      <blockquote>"the Milky Way is visible right at the front porch!"<cite>Wuhan, Farm Pod, February 2026</cite></blockquote>
+      <blockquote>"enjoyed some slower days reading, riding the bikes and taking it easy."<cite>Lucy, The Stable, July 2026</cite></blockquote>
+      <blockquote>"a walk up Charlie's Hill to meet the sheep and admire the view"<cite>Heather, The Stable, January 2026</cite></blockquote>
+      <p class="src">From Airbnb reviews. The three stays have 1,464 reviews between them.</p>
+    </div>
+  </div>
+</section>
+
+<section class="there" aria-labelledby="h-there">
+  <figure><img src="img/woolshed.jpg" alt="The woolshed with TWAMLEY painted in white letters across its iron roof, behind a timber rail fence" width="1024" height="683" loading="lazy"></figure>
+  <div class="t">
+    <h2 id="h-there">Turn off the highway and the pace drops</h2>
+    <p>431 Twamley Road, Buckland, up a gravel road past the woolshed with the farm's name on the roof.</p>
+    <dl>
+      <dt>Maria Island ferry</dt><dd>About 20 minutes to Triabunna</dd>
+      <dt>Hobart</dt><dd>Within an hour</dd>
+      <dt>Richmond</dt><dd>Within an hour</dd>
+      <dt>Port Arthur</dt><dd>Within an hour</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="book" id="book" aria-labelledby="h-book">
+  <div class="wrap">
+    <h2 id="h-book">Check dates</h2>
+    <p class="sub">Each stay sleeps two. Pick one to see what's free.</p>
+    <div class="three">
+      <a href="https://www.airbnb.com.au/rooms/9032049"><img src="img/stable-out-800.jpg" alt="" width="800" height="533" loading="lazy"><div class="t"><h3>The Stable</h3><span class="go">Check dates</span></div></a>
+      <a href="https://www.airbnb.com.au/rooms/15556557"><img src="img/pod-out-800.jpg" alt="" width="800" height="600" loading="lazy"><div class="t"><h3>Farm Pod</h3><span class="go">Check dates</span></div></a>
+      <a href="https://www.airbnb.com.au/rooms/591441972059777255"><img src="img/hut-out-800.jpg" alt="" width="800" height="533" loading="lazy"><div class="t"><h3>Shearers Hut</h3><span class="go">Check dates</span></div></a>
+    </div>
+    <div class="direct">
+      <span>Or ask Angela and Elizabeth:</span>
+      <a href="mailto:bookings@twamleyfarm.com.au">bookings@twamleyfarm.com.au</a>
+      <a href="tel:+61439114996">0439 114 996</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Twamley Farm, 431 Twamley Road, Buckland, Tasmania 7190</span>
+    <span>A preview made by Lamplit Studio for Twamley Farm. Not affiliated, not live.</span>
+  </div>
+</footer>
+
+<div class="bar" aria-label="Book">
+  <a class="btn" href="#book">Check dates</a>
+  <a class="btn ghost" href="tel:+61439114996">Call</a>
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var q = function(s){return document.querySelector(s)};
+  var clamp = function(v,a,b){return v<a?a:v>b?b:v};
+  var ease = function(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2};
+  var seg = function(p,a,b){return clamp((p-a)/(b-a),0,1)};
+
+  var hero = q('.mistscene'), fog = q('[data-p="fog"]'), land = q('[data-p="land"]'),
+      d1 = q('[data-p="d1"]'), d2 = q('[data-p="d2"]'), words = q('[data-p="words"]');
+  var walk = q('.mapwalk'), box = q('#mapbox'), title = q('[data-m="title"]');
+  var stops = [].slice.call(document.querySelectorAll('.stop'));
+  var pins = [].slice.call(document.querySelectorAll('.pin'));
+  var MW = 1753, MH = 2480;
+
+  // Map keyframes: focus point on the map (fractions) and zoom over "contain"
+  var K = [
+    {p:0.00, x:.50,  y:.50,  z:1.00},
+    {p:0.10, x:.50,  y:.50,  z:1.00},
+    {p:0.26, x:.37,  y:.60,  z:1.70},
+    {p:0.38, x:.26,  y:.80,  z:2.70},
+    {p:0.46, x:.265, y:.823, z:3.40},
+    {p:0.60, x:.265, y:.823, z:3.40},
+    {p:0.66, x:.211, y:.833, z:3.40},
+    {p:0.80, x:.211, y:.833, z:3.40},
+    {p:0.86, x:.291, y:.878, z:3.40},
+    {p:1.00, x:.291, y:.878, z:3.40}
+  ];
+  var STOP = [[0.42,0.62],[0.62,0.82],[0.82,1.01]];
+  var vw, vh, phone, base, bw, bh;
+
+  function size(){
+    vw = window.innerWidth; vh = q('.mstage').clientHeight || window.innerHeight; phone = vw < 861;
+    base = Math.min(vw/MW, vh/MH);
+    if (phone) base = Math.min(vw/MW*1.0, vh/MH*1.0);
+    bw = MW*base; bh = MH*base;
+    if (!reduce){ box.style.width = bw+'px'; box.style.height = bh+'px'; }
+  }
+  function at(p){
+    for (var i=1;i<K.length;i++){
+      if (p <= K[i].p){
+        var a=K[i-1], b=K[i], t=ease(seg(p,a.p,b.p));
+        return {x:a.x+(b.x-a.x)*t, y:a.y+(b.y-a.y)*t, z:a.z+(b.z-a.z)*t};
+      }
+    }
+    return K[K.length-1];
+  }
+  function progress(el){
+    var r = el.getBoundingClientRect();
+    var sh = el.firstElementChild.clientHeight || vh;
+    return clamp(-r.top/Math.max(1, r.height - sh), 0, 1);
+  }
+  var ticking = false;
+  function frame(){
+    ticking = false;
+    // Hero: mist lifts and drifts apart, land eases in, words rise
+    var h = progress(hero);
+    var f = ease(seg(h,0,.75));
+    fog.style.opacity = (1 - f).toFixed(3);
+    fog.style.transform = 'scale(' + (1.04 + f*.08).toFixed(4) + ')';
+    land.style.transform = 'scale(' + (1.12 - .12*ease(seg(h,0,.9))).toFixed(4) + ')';
+    d1.style.transform = 'translate3d(' + (-f*28).toFixed(2) + '%,' + (f*6).toFixed(2) + '%,0)';
+    d1.style.opacity = (1 - seg(h,.25,.85)).toFixed(3);
+    d2.style.transform = 'translate3d(' + (f*24).toFixed(2) + '%,' + (f*14).toFixed(2) + '%,0)';
+    d2.style.opacity = (1 - seg(h,.15,.7)).toFixed(3);
+    var w = seg(h,.82,1);
+    words.style.transform = 'translate3d(0,' + (-w*40).toFixed(1) + 'px,0)';
+    words.style.opacity = (1 - w).toFixed(3);
+    words.inert = w > .9;
+
+    // Map walk
+    var p = progress(walk);
+    var k = at(p), s = k.z;
+    var zt = seg(k.z, 1, 1.7);
+    var cx = vw*.5 + ((phone ? vw*.5 : vw*.34) - vw*.5)*zt;
+    var cy = vh*.5 + ((phone ? vh*.34 : vh*.5) - vh*.5)*zt;
+    var tx = cx - k.x*bw*s, ty = cy - k.y*bh*s;
+    box.style.transform = 'translate3d(' + tx.toFixed(1) + 'px,' + ty.toFixed(1) + 'px,0) scale(' + s.toFixed(4) + ')';
+    title.style.opacity = (1 - seg(p,.2,.3)).toFixed(3);
+    stops.forEach(function(st,i){
+      var a = STOP[i][0], b = STOP[i][1];
+      var o = Math.min(seg(p,a,a+.04), 1 - seg(p,b-.03,b));
+      st.style.opacity = o.toFixed(3);
+      st.style.transform = (phone ? 'translate3d(0,' : 'translate3d(0,calc(-50% + ') + ((1-o)*24).toFixed(1) + 'px' + (phone ? ',0)' : '),0)');
+      st.style.pointerEvents = o > .5 ? 'auto' : 'none';
+      st.inert = !(o > .5);
+      pins[i].classList.toggle('on', o > .3);
+    });
+  }
+  function onScroll(){ if (!ticking){ ticking = true; requestAnimationFrame(frame); } }
+
+  var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (mq.addEventListener) mq.addEventListener('change', function(){ location.reload(); });
+  if (reduce) return;
+  size(); frame();
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', function(){ size(); frame(); });
+})();
+</script>
+</body>
+</html>
